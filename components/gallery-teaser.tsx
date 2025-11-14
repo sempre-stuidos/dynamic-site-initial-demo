@@ -1,9 +1,16 @@
-export default function GalleryTeaser() {
-  const images = [
+interface GalleryTeaserProps {
+  images?: string[]
+  ctaLabel?: string
+}
+
+export default function GalleryTeaser({ 
+  images = [
     "/plated-fine-dining-dish.jpg",
     "/elegant-restaurant-dining-room.jpg",
     "/gourmet-food-presentation.jpg",
-  ]
+  ],
+  ctaLabel = "View Full Gallery"
+}: GalleryTeaserProps) {
 
   return (
     <section className="py-20 bg-background">
@@ -27,7 +34,7 @@ export default function GalleryTeaser() {
         
         <div className="text-center">
           <button className="bg-primary text-primary-foreground px-8 py-3 hover:opacity-90 transition">
-            View Full Gallery
+            {ctaLabel}
           </button>
         </div>
       </div>

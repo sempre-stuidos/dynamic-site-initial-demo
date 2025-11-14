@@ -1,5 +1,4 @@
 import Header from '@/components/header'
-import InfoBar from '@/components/info-bar'
 import Footer from '@/components/footer'
 import DynamicSection from '@/components/dynamic-section'
 import { getPageBySlug, getPageSections } from '@/lib/pages'
@@ -24,7 +23,6 @@ export default async function Home({ searchParams }: HomeProps) {
   if (!page) {
     return (
       <main className="min-h-screen">
-        <InfoBar />
         <Header />
         <div className="p-8 text-center">
           <p className="text-muted-foreground">Page not found. Please configure your pages in the dashboard.</p>
@@ -46,7 +44,6 @@ export default async function Home({ searchParams }: HomeProps) {
 
   return (
     <main className="min-h-screen">
-      <InfoBar />
       <Header />
       {sections.map((section) => (
         <DynamicSection

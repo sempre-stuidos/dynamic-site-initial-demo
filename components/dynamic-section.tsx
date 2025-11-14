@@ -34,10 +34,10 @@ export default function DynamicSection({ component, content }: DynamicSectionPro
       return <Specialties specialties={content.specialties || content.items} />
     
     case 'GalleryTeaser':
-      return <GalleryTeaser />
+      return <GalleryTeaser images={content.images} ctaLabel={content.ctaLabel} />
     
     case 'CTABanner':
-      return <CTABanner />
+      return <CTABanner title={content.title} description={content.description} ctaLabel={content.ctaLabel} />
     
     default:
       return (
